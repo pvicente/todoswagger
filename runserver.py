@@ -29,7 +29,7 @@ def abort_if_todo_doesnt_exist(todo_id):
         api.abort(404, "Todo {} doesn't exist".format(todo_id))
 
 parser = api.parser()
-parser.add_argument('task', type=str, required=True, help='The task details', location='form')
+parser.add_argument('task', type=str, required=True, help='The task details', location='json')
 
 
 @ns.route('/<string:todo_id>')
